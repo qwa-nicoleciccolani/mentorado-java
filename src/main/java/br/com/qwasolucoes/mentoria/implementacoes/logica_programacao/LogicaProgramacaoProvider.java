@@ -1,6 +1,7 @@
 package br.com.qwasolucoes.mentoria.implementacoes.logica_programacao;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.List;
 
 import br.com.qwasolucoes.mentoria.interfaces.logica_programacao.LogicaProgramacao;
@@ -250,14 +251,31 @@ public class LogicaProgramacaoProvider implements LogicaProgramacao{
 
 	@Override
 	public int[] obterDobrosAteMil(int valor) {
-		// TODO Auto-generated method stub
-		return null;
+		int [] dobro = new int[50];
+		dobro[0]=valor;
+		for(int i=0; dobro[i]<1000; i++) {
+			dobro[i+1] = dobro[i] * 2;
+		}
+		return dobro;
 	}
 
 	@Override
 	public int[][] tabuada(int valor) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		int[][] mat = new int[11][3];
+		
+		for(int linha=0; linha<=10; linha++) {
+			for(int coluna=0; coluna<3; coluna++) {
+				mat[linha][0]=linha;
+				mat[linha][1]=valor;
+				mat[linha][2]=linha*valor;
+				
+			}
+		}
+		
+
+
+		return mat;
 	}
 
 }
